@@ -21,9 +21,9 @@ RSpec.describe 'Task', type: :system do
         click_link 'View Todos'
         windows = page.driver.browser.window_handles
         page.driver.browser.switch_to.window(windows.last)
-          expect(page).to have_content task.title
-          expect(Task.count).to eq 1
-          expect(current_path).to eq project_tasks_path(project)
+        expect(page).to have_content task.title
+        expect(Task.count).to eq 1
+        expect(current_path).to eq project_tasks_path(project)
       end
     end
   end
